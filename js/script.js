@@ -1,11 +1,11 @@
 // PRODUCTS DATA (Hat-Trick Scents catalog)
 const products = [
-  { id: 1, name: "Oud Noir Perfume", category: "Perfumes", price: 125000, image: "https://res.cloudinary.com/dwmxnz1ox/image/upload/v1779188760/oud_noir_r0urax.jpg", desc: "Rich woody oud with sensual amber." },
-  { id: 2, name: "Golden Rose EDP", category: "Perfumes", price: 98000, image: "https://res.cloudinary.com/dwmxnz1ox/image/upload/v1779188781/Red_Rose_bx6w4s.jpg", desc: "Floral bouquet with rose & musk." },
-  { id: 3, name: "Zanzibar Breeze", category: "Perfumes", price: 89000, image: "https://images.pexels.com/photos/4016685/pexels-photo-4016685.jpeg?auto=compress&cs=tinysrgb&w=400", desc: "Coconut, vanilla & sea salt - tropical charm." },
-  { id: 4, name: "Matte Lipstick Set", category: "Cosmetics", price: 45000, image: "https://res.cloudinary.com/dwmxnz1ox/image/upload/v1779188740/Matte_Lipstick_Set_miomot.jpg", desc: "Set of 5 long-lasting matte shades." },
-  { id: 5, name: "Vitamin C Serum", category: "Skincare", price: 68000, image: "https://images.pexels.com/photos/4041392/pexels-photo-4041392.jpeg?auto=compress&cs=tinysrgb&w=400", desc: "Brightening serum with hyaluronic acid." },
-  { id: 6, name: "Luxury Gift Set", category: "Gift Sets", price: 210000, image: "https://res.cloudinary.com/dwmxnz1ox/image/upload/v1779188725/Luxury_Gift_e3qkfg.jpg", desc: "Perfume + body lotion + lipstick." }
+  { id: 1, name: "Oud Noir Manukato", category: "Manukato", price: 125000, image: "https://res.cloudinary.com/dwmxnz1ox/image/upload/v1779188760/oud_noir_r0urax.jpg", desc: "Manukato tajiri wa mbao na amba yenye hisia za joto." },
+  { id: 2, name: "Golden Rose EDP", category: "Manukato", price: 98000, image: "https://res.cloudinary.com/dwmxnz1ox/image/upload/v1779188781/Red_Rose_bx6w4s.jpg", desc: "Maua ya waridi yenye harufu ya rose na misk." },
+  { id: 3, name: "Zanzibar Breeze", category: "Manukato", price: 89000, image: "https://images.pexels.com/photos/4016685/pexels-photo-4016685.jpeg?auto=compress&cs=tinysrgb&w=400", desc: "Nazi, vanila na chumvi bahari - haiba ya kitropiki." },
+  { id: 4, name: "Seti ya Midomo Matte", category: "Vipodozi", price: 45000, image: "https://res.cloudinary.com/dwmxnz1ox/image/upload/v1779188740/Matte_Lipstick_Set_miomot.jpg", desc: "Seti ya rangi 5 za midomo zinazodumu kwa muda mrefu." },
+  { id: 5, name: "Vitamin C Serum", category: "Utunzaji wa Ngozi", price: 68000, image: "https://images.pexels.com/photos/4041392/pexels-photo-4041392.jpeg?auto=compress&cs=tinysrgb&w=400", desc: "Serum inayoongeza mng'aro na asidi ya hyaluronic." },
+  { id: 6, name: "Seti ya Zawadi ya Kifahari", category: "Seti za Zawadi", price: 210000, image: "https://res.cloudinary.com/dwmxnz1ox/image/upload/v1779188725/Luxury_Gift_e3qkfg.jpg", desc: "Manukato + lotion ya mwili + midomo." }
 ];
 
 // Cart array
@@ -32,10 +32,10 @@ function updateThemeIcon(theme) {
   if (themeBtn) {
     if (theme === 'dark') {
       themeBtn.innerHTML = '<i class="fas fa-sun"></i>';
-      themeBtn.title = 'Switch to Light Mode';
+      themeBtn.title = 'Badilisha kwa Mwangaza';
     } else {
       themeBtn.innerHTML = '<i class="fas fa-moon"></i>';
-      themeBtn.title = 'Switch to Dark Mode';
+      themeBtn.title = 'Badilisha kwa Giza';
     }
   }
 }
@@ -55,7 +55,7 @@ function toggleTheme() {
   updateThemeIcon(newTheme);
   
   // Show toast notification
-  showToast(`${newTheme === 'dark' ? '🌙 Dark Mode' : '☀️ Light Mode'} activated!`);
+  showToast(`${newTheme === 'dark' ? '🌙 Hali ya Giza' : '☀️ Hali ya Mwangaza'} imewashwa!`);
 }
 
 // ==================== PRODUCT RENDERING ====================
@@ -71,7 +71,7 @@ function renderProducts() {
           <p class="small text-muted">${prod.desc}</p>
           <div class="d-flex justify-content-between align-items-center">
             <span class="product-price">TZS ${prod.price.toLocaleString()}</span>
-            <button class="add-to-cart" data-id="${prod.id}"><i class="fas fa-cart-plus"></i> Add</button>
+            <button class="add-to-cart" data-id="${prod.id}"><i class="fas fa-cart-plus"></i> Ongeza</button>
           </div>
         </div>
       </div>
@@ -91,7 +91,7 @@ function addToCart(productId) {
   if(product){
     cart.push(product);
     updateCartUI();
-    showToast(`${product.name} added to bag! ✨`);
+    showToast(`${product.name} imeongezwa kwenye rafu! ✨`);
     // Add subtle animation to cart icon
     const cartIcon = document.getElementById('cartBtn');
     if(cartIcon) {
@@ -106,7 +106,7 @@ function updateCartUI() {
   if(cartCountSpan) cartCountSpan.innerText = cart.length;
   const cartList = document.getElementById('cartItemsList');
   if(cartList){
-    if(cart.length === 0) cartList.innerHTML = '<p class="text-muted">Your cart is empty. Add some luxury products! 🛍️</p>';
+    if(cart.length === 0) cartList.innerHTML = '<p class="text-muted">Rafu yako ni tupu. Ongeza bidhaa za kifahari! 🛍️</p>';
     else {
       const cartItemsHtml = cart.map((item, idx) => `
         <div class="mb-2 pb-2 border-bottom">
@@ -124,7 +124,7 @@ function updateCartUI() {
       const total = cart.reduce((sum, i) => sum + i.price, 0);
       cartList.innerHTML = cartItemsHtml + `
         <div class="mt-3 pt-2 border-top">
-          <strong>Total: <span class="gold-text">TZS ${total.toLocaleString()}</span></strong>
+          <strong>Jumla: <span class="gold-text">TZS ${total.toLocaleString()}</span></strong>
         </div>
       `;
       document.querySelectorAll('.remove-item').forEach(btn => {
@@ -133,7 +133,7 @@ function updateCartUI() {
           const removedItem = cart[idx];
           cart.splice(idx,1);
           updateCartUI();
-          showToast(`${removedItem.name} removed from cart`);
+          showToast(`${removedItem.name} imetolewa kwenye rafu`);
         });
       });
     }
@@ -155,41 +155,41 @@ function showToast(msg) {
 // ==================== WHATSAPP ORDER FUNCTION ====================
 function sendOrderToCEO() {
   if(cart.length === 0){
-    showToast("Your cart is empty! Add some products first 🛍️");
+    showToast("Rafu yako ni tupu! Ongeza bidhaa kwanza 🛍️");
     return false;
   }
   
-  let orderSummary = "🛍️ *NEW ORDER FROM HAT-TRICK SCENTS*%0A%0A";
-  orderSummary += "📋 *ORDER DETAILS:*%0A";
+  let orderSummary = "🛍️ *AGIZA JIPYA KUTOKA HAT-TRICK SCENTS*%0A%0A";
+  orderSummary += "📋 *MAELEZO YA AGIZO:*%0A";
   orderSummary += "─────────────────%0A";
   cart.forEach((item, index) => {
     orderSummary += `${index + 1}. ${item.name}%0A   💰 TZS ${item.price.toLocaleString()}%0A`;
   });
   orderSummary += "─────────────────%0A";
   const total = cart.reduce((sum,i)=> sum + i.price,0);
-  orderSummary += `💰 *TOTAL: TZS ${total.toLocaleString()}*%0A%0A`;
-  orderSummary += "👤 *CUSTOMER INFORMATION*%0A";
+  orderSummary += `💰 *JUMLA: TZS ${total.toLocaleString()}*%0A%0A`;
+  orderSummary += "👤 *MAELEZO YA MTEGEMA HUDUMA*%0A";
   orderSummary += "─────────────────%0A";
-  orderSummary += "📝 Please provide:%0A";
-  orderSummary += "• Full Name:%0A";
-  orderSummary += "• Delivery Address:%0A";
-  orderSummary += "• Preferred Payment Method:%0A%0A";
-  orderSummary += "💳 *PAYMENT OPTIONS:*%0A";
+  orderSummary += "📝 Tafadhali toa:%0A";
+  orderSummary += "• Jina Kamili:%0A";
+  orderSummary += "• Anwani ya Uwasilishaji:%0A";
+  orderSummary += "• Njia ya Malipo Unayopendelea:%0A%0A";
+  orderSummary += "💳 *NJIA ZA MALIPO:*%0A";
   orderSummary += "─────────────────%0A";
   orderSummary += "📱 M-Pesa/Tigo/Airtel Money:%0A";
   orderSummary += "   YAS: +255 677 532 140%0A";
   orderSummary += "   (FAHIMA MOHAMED ISSA)%0A";
-  orderSummary += "🏦 CRDB Bank:%0A";
+  orderSummary += "🏦 Benki ya CRDB:%0A";
   orderSummary += "   0152758498000%0A";
   orderSummary += "   (MOHAMMED AMINU SHEHE)%0A%0A";
-  orderSummary += "🌟 *Thank you for choosing Hat-Trick Scents!* 🌟";
+  orderSummary += "🌟 *Asante kwa kuchagua Hat-Trick Scents!* 🌟";
   
   const phone = "255679806126"; // CEO Omar Khalid Said
   const url = `https://wa.me/${phone}?text=${orderSummary}`;
   window.open(url, '_blank');
   
   // Show success message and clear cart
-  showToast("Order prepared! WhatsApp will open 📱");
+  showToast("Agizo limeandaliwa! WhatsApp itafunguka 📱");
   cart = [];
   updateCartUI();
   
@@ -210,22 +210,22 @@ document.getElementById('contactForm')?.addEventListener('submit', function(e) {
   const msg = document.getElementById('contactMsg').value;
   
   if(!name || !msg){
-    showToast("Please enter your name and message 📝");
+    showToast("Tafadhali ingiza jina lako na ujumbe 📝");
     return;
   }
   
-  let text = `📞 *NEW CONTACT FORM SUBMISSION*%0A%0A`;
-  text += `👤 *Name:* ${name}%0A`;
-  text += `📧 *Email:* ${email || 'Not provided'}%0A`;
-  text += `📱 *Phone:* ${phone || 'Not provided'}%0A`;
-  text += `💬 *Message:*%0A${msg}%0A%0A`;
-  text += `📍 *Store Location:* Michenzani Mall, 3rd Floor, Zanzibar%0A`;
-  text += `🌟 *Will respond within 15 minutes!* 🌟`;
+  let text = `📞 *UJUMBE MPYA KUTOKA KWA FOMU YA MAWASILIANO*%0A%0A`;
+  text += `👤 *Jina:* ${name}%0A`;
+  text += `📧 *Barua Pepe:* ${email || 'Hajajazwa'}%0A`;
+  text += `📱 *Simu:* ${phone || 'Hajajazwa'}%0A`;
+  text += `💬 *Ujumbe:*%0A${msg}%0A%0A`;
+  text += `📍 *Eneo la Duka:* Michenzani Mall, Ghorofa ya 3, Zanzibar%0A`;
+  text += `🌟 *Tutajibu ndani ya dakika 15!* 🌟`;
   
   const ceoPhone = "255679806126";
   window.open(`https://wa.me/${ceoPhone}?text=${text}`, '_blank');
   this.reset();
-  showToast("Message forwarded to CEO via WhatsApp 📱");
+  showToast("Ujumbe umetumwa kwa Mkurugenzi kupitia WhatsApp 📱");
 });
 
 // ==================== CART MODAL ====================
@@ -238,7 +238,7 @@ document.getElementById('cartBtn')?.addEventListener('click', (e) => {
 
 document.getElementById('checkoutWhatsAppBtn')?.addEventListener('click', sendOrderToCEO);
 
-// ==================== CHATBOT LOGIC ====================
+// ==================== CHATBOT LOGIC IN SWAHILI ====================
 const chatbotIcon = document.getElementById('chatbotIcon');
 const chatbotWindow = document.getElementById('chatbotWindow');
 const closeChat = document.getElementById('closeChat');
@@ -265,38 +265,38 @@ function addUserMessage(text) {
 function botReply(userMessage) {
   const lowerMsg = userMessage.toLowerCase();
   
-  if(lowerMsg.includes('location') || lowerMsg.includes('store') || lowerMsg.includes('mall') || lowerMsg.includes('address')) {
-    return "📍 Our boutique is at <strong>Michenzani Mall, 3rd Floor, Zanzibar</strong>. Visit us for exclusive testers and personal consultations! 🏪";
+  if(lowerMsg.includes('wapi') || lowerMsg.includes('eneo') || lowerMsg.includes('duka') || lowerMsg.includes('mahali') || lowerMsg.includes('anwani')) {
+    return "📍 Duka letu lipo <strong>Michenzani Mall, Ghorofa ya 3, Zanzibar</strong>. Tupate kwa majaribio ya kipekee na ushauri wa kibinafsi! 🏪";
   } 
-  else if(lowerMsg.includes('payment') || lowerMsg.includes('pay') || lowerMsg.includes('mpesa') || lowerMsg.includes('tigo') || lowerMsg.includes('airtel')) {
-    return "💸 <strong>Payment Methods:</strong><br>📱 Mobile Money: YAS +255 677 532 140 (FAHIMA MOHAMED ISSA)<br>🏦 CRDB Bank: 0152758498000 (MOHAMMED AMINU SHEHE)<br>💵 Cash on Delivery available in Zanzibar & Dar es Salaam!";
+  else if(lowerMsg.includes('malipo') || lowerMsg.includes('kulipa') || lowerMsg.includes('mpesa') || lowerMsg.includes('tigo') || lowerMsg.includes('airtel')) {
+    return "💸 <strong>Njia za Malipo:</strong><br>📱 M-Pesa/Tigo/Airtel: YAS +255 677 532 140 (FAHIMA MOHAMED ISSA)<br>🏦 CRDB Bank: 0152758498000 (MOHAMMED AMINU SHEHE)<br>💵 Malipo kwa mkono yanakubalika Zanzibar na Dar es Salaam!";
   } 
-  else if(lowerMsg.includes('whatsapp') || lowerMsg.includes('contact') || lowerMsg.includes('phone') || lowerMsg.includes('call')) {
-    return "📱 <strong>Contact Us:</strong><br>👔 CEO Omar: +255 679 806 126<br>👤 Assistant CEO: +255 776 626 229<br>🛍️ Online Manager: +255 677 532 140<br>📧 Email: hello@hattrickscents.co.tz";
+  else if(lowerMsg.includes('whatsapp') || lowerMsg.includes('wasiliana') || lowerMsg.includes('simu') || lowerMsg.includes('piga') || lowerMsg.includes('namba')) {
+    return "📱 <strong>Wasiliana Nasi:</strong><br>👔 Mkurugenzi Omar: +255 679 806 126<br>👤 Msaidizi wa Mkurugenzi: +255 776 626 229<br>🛍️ Meneja Mtandaoni: +255 677 532 140<br>📧 Barua Pepe: hello@hattrickscents.co.tz";
   } 
-  else if(lowerMsg.includes('shipping') || lowerMsg.includes('delivery') || lowerMsg.includes('shipping')) {
-    return "🚚 <strong>Delivery Information:</strong><br>• Tanzania (Dar, Arusha, Mwanza, Zanzibar): 1-3 business days<br>• Free delivery on orders over TZS 150,000<br>• Tracking provided for all shipments";
+  else if(lowerMsg.includes('usafirishaji') || lowerMsg.includes('wasilisha') || lowerMsg.includes('delivery')) {
+    return "🚚 <strong>Taarifa za Usafirishaji:</strong><br>• Tanzania (Dar, Arusha, Mwanza, Zanzibar): siku 1-3 za kazi<br>• Usafirishaji bila malipo kwa maagizo zaidi ya TZS 150,000<br>• Tunatoa namba ya kufuatilia usafirishaji kwa shehena zote";
   } 
-  else if(lowerMsg.includes('perfume') || lowerMsg.includes('fragrance') || lowerMsg.includes('scent')) {
-    return "✨ Our perfume collection includes:<br>• Oud Noir (Rich woody amber)<br>• Golden Rose (Floral musk)<br>• Zanzibar Breeze (Coconut vanilla)<br>Check our Shop section for best-sellers! 🛍️";
+  else if(lowerMsg.includes('Manukato') || lowerMsg.includes('harufu') || lowerMsg.includes('perfume')) {
+    return "✨ Mkusanyiko wetu wa Manukato unajumuisha:<br>• Oud Noir (Mbao tajiri na amba)<br>• Golden Rose (Maua ya waridi na misk)<br>• Zanzibar Breeze (Nazi na vanila)<br>Angalia sehemu ya Duka kwa bidhaa zinazouzwa sana! 🛍️";
   } 
-  else if(lowerMsg.includes('cosmetic') || lowerMsg.includes('makeup') || lowerMsg.includes('lipstick')) {
-    return "💄 Our cosmetics range features:<br>• Matte Lipstick Sets (5 shades)<br>• Vitamin C Brightening Serum<br>• Luxury gift sets<br>All products are cruelty-free and ethically sourced! 🌸";
+  else if(lowerMsg.includes('vipodozi') || lowerMsg.includes('urembo') || lowerMsg.includes('midomo') || lowerMsg.includes('makeup')) {
+    return "💄 Bidhaa zetu za vipodozi zinajumuisha:<br>• Seti za Midomo Matte (rangi 5)<br>• Vitamin C Serum inayoongeza mng'aro<br>• Seti za zawadi za kifahari<br>Bidhaa zote hazidhuru wanyama na zimetoka kwa vyanzo vya kimaadili! 🌸";
   }
-  else if(lowerMsg.includes('hours') || lowerMsg.includes('open') || lowerMsg.includes('timing')) {
-    return "⏰ <strong>Store Hours:</strong><br>Monday - Saturday: 10:00 AM - 9:00 PM<br>Sunday: 12:00 PM - 6:00 PM<br>📍 Michenzani Mall, 3rd Floor";
+  else if(lowerMsg.includes('saa') || lowerMsg.includes('kazi') || lowerMsg.includes('fungua') || lowerMsg.includes('saa za kazi')) {
+    return "⏰ <strong>Saa za Kufungua:</strong><br>Jumatatu - Jumamosi: 10:00 AM - 9:00 PM<br>Jumapili: 12:00 PM - 6:00 PM<br>📍 Michenzani Mall, Ghorofa ya 3";
   }
-  else if(lowerMsg.includes('discount') || lowerMsg.includes('offer') || lowerMsg.includes('sale')) {
-    return "🎉 <strong>Current Offers:</strong><br>• Buy 2 perfumes, get 10% off<br>• Free shipping on orders over TZS 150k<br>• First-time customer? Get 5% off your first order! DM for code ✨";
+  else if(lowerMsg.includes('punguzo') || lowerMsg.includes('ofaa') || lowerMsg.includes('bei') || lowerMsg.includes('nafuu')) {
+    return "🎉 <strong>Ofa za Sasa:</strong><br>• Nunua Manukato 2, pata punguzo la 10%<br>• Usafirishaji bila malipo kwa maagizo zaidi ya TZS 150k<br>• Mteja wa mara ya kwanza? Pata punguzo la 5% kwa agizo lako la kwanza! Tumia CODE: KARIBU5 ✨";
   }
-  else if(lowerMsg.includes('return') || lowerMsg.includes('exchange') || lowerMsg.includes('refund')) {
-    return "🔄 <strong>Return Policy:</strong><br>• 7-day return window for unopened products<br>• Exchange available for defective items<br>• Contact us within 24 hours of delivery for issues";
+  else if(lowerMsg.includes('rejesha') || lowerMsg.includes('badilisha') || lowerMsg.includes('refund')) {
+    return "🔄 <strong>Sera ya Kurejesha Bidhaa:</strong><br>• Siku 7 za kurejesha bidhaa ambazo hazijafunguliwa<br>• Kubadilishana kunapatikana kwa bidhaa zenye kasoro<br>• Wasiliana nasi ndani ya saa 24 za uwasilishaji kwa matatizo yoyote";
   }
-  else if(lowerMsg.includes('hello') || lowerMsg.includes('hi') || lowerMsg.includes('hey')) {
-    return "🌸 Hello! Welcome to Hat-Trick Scents! How can I assist you today? You can ask about our products, delivery, payments, or store location! ✨";
+  else if(lowerMsg.includes('habari') || lowerMsg.includes('jambo') || lowerMsg.includes('hujambo') || lowerMsg.includes('sasa')) {
+    return "🌸 Habari! Karibu Hat-Trick Scents! Nikusaidieje leo? Unaweza kuuliza kuhusu bidhaa zetu, usafirishaji, malipo, au eneo la duka letu! ✨";
   }
   else {
-    return "🌸 Thank you for reaching out! For orders, click 'Add to Cart' and checkout via WhatsApp. Our team replies within minutes! Need specific help? Call +255 677 532 140. 😊";
+    return "🌸 Asante kwa kuwasiliana nasi! Kwa maagizo, bofya 'Ongeza kwenye Rafu' na maliza ununuzi kupitia WhatsApp. Timu yetu inajibu ndani ya dakika chache! Unahitaji msaada maalum? Piga +255 677 532 140. 😊";
   }
 }
 
@@ -323,7 +323,7 @@ chatbotIcon?.addEventListener('click', () => {
     chatbotWindow.style.display = 'flex';
     // Add welcome message if chat is empty
     if (chatMessages.children.length === 0) {
-      addBotMessage("🌸 Welcome back! Ask me anything about our products, store location, or delivery! ✨");
+      addBotMessage("🌸 Karibu tena! Niulize chochote kuhusu bidhaa zetu, eneo la duka, au usafirishaji! ✨");
     }
   }
 });
@@ -390,7 +390,7 @@ document.addEventListener('DOMContentLoaded', () => {
     themeBtn.id = 'themeToggleBtn';
     themeBtn.className = 'theme-toggle';
     themeBtn.innerHTML = '<i class="fas fa-moon"></i>';
-    themeBtn.title = 'Switch to Dark Mode';
+    themeBtn.title = 'Badilisha kwa Giza';
     themeBtn.addEventListener('click', toggleTheme);
     document.body.appendChild(themeBtn);
   }
