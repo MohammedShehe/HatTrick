@@ -113,6 +113,7 @@ h1, h2, h3, h4, h5, .navbar-brand {
 .cart-icon {
   position: relative;
   font-size: 1.3rem;
+  cursor: pointer;
 }
 
 #cartCount {
@@ -215,6 +216,7 @@ h1, h2, h3, h4, h5, .navbar-brand {
   height: 280px;
   object-fit: cover;
   transition: transform 0.5s;
+  width: 100%;
 }
 
 .product-card:hover .product-img {
@@ -255,6 +257,7 @@ h1, h2, h3, h4, h5, .navbar-brand {
 .add-to-cart:hover {
   background: var(--gold);
   color: black;
+  transform: scale(1.05);
 }
 
 .about-section {
@@ -277,7 +280,7 @@ h1, h2, h3, h4, h5, .navbar-brand {
   font-size: 1.5rem;
 }
 
-/* Blog Section - Fixed for Dark Mode */
+/* Blog Section */
 .blog-section {
   background: var(--blog-bg);
   transition: background-color var(--transition-speed);
@@ -285,10 +288,6 @@ h1, h2, h3, h4, h5, .navbar-brand {
 
 .blog-section .section-title {
   color: var(--text-primary);
-}
-
-.blog-section .section-subtitle {
-  color: var(--text-secondary);
 }
 
 .blog-card {
@@ -313,11 +312,6 @@ h1, h2, h3, h4, h5, .navbar-brand {
   height: 200px;
   width: 100%;
   object-fit: cover;
-}
-
-/* Remove the conflicting bg-light class override */
-.bg-light {
-  background: var(--blog-bg) !important;
 }
 
 .contact-section {
@@ -368,6 +362,15 @@ h1, h2, h3, h4, h5, .navbar-brand {
   text-decoration: none;
 }
 
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer ul li {
+  margin-bottom: 8px;
+}
+
 .social-links a {
   font-size: 1.8rem;
   margin-right: 15px;
@@ -377,6 +380,42 @@ h1, h2, h3, h4, h5, .navbar-brand {
 
 .social-links a:hover {
   color: var(--gold);
+}
+
+/* Product Modal */
+.product-modal-content {
+  background: var(--bg-card);
+  border-radius: 24px;
+  border: 1px solid var(--border-color);
+}
+
+.product-modal-img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.modal-content {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.modal-header {
+  border-bottom-color: var(--border-color);
+}
+
+.modal-footer {
+  border-top-color: var(--border-color);
+}
+
+.btn-close {
+  filter: invert(0);
+}
+
+[data-theme="dark"] .btn-close {
+  filter: invert(1);
 }
 
 /* Chatbot */
@@ -397,6 +436,10 @@ h1, h2, h3, h4, h5, .navbar-brand {
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
   z-index: 1000;
   transition: 0.2s;
+}
+
+.chatbot-icon:hover {
+  transform: scale(1.1);
 }
 
 .chatbot-window {
@@ -488,29 +531,6 @@ h1, h2, h3, h4, h5, .navbar-brand {
   cursor: pointer;
 }
 
-/* Modal Dark Theme */
-.modal-content {
-  background: var(--bg-card);
-  color: var(--text-primary);
-  border: 1px solid var(--border-color);
-}
-
-.modal-header {
-  border-bottom-color: var(--border-color);
-}
-
-.modal-footer {
-  border-top-color: var(--border-color);
-}
-
-.btn-close {
-  filter: invert(0);
-}
-
-[data-theme="dark"] .btn-close {
-  filter: invert(1);
-}
-
 /* Toast Message */
 .toast-message {
   position: fixed;
@@ -548,4 +568,6 @@ h1, h2, h3, h4, h5, .navbar-brand {
     height: 45px;
     font-size: 1.1rem;
   }
+  .product-modal-img { max-height: 250px; }
+  .modal-dialog { margin: 0.5rem; }
 }

@@ -1,23 +1,39 @@
 // PRODUCTS DATA (Hat-Trick Scents catalog)
 const products = [
-  { id: 1, name: "Oud Noir Manukato", category: "Manukato", price: 125000, image: "https://res.cloudinary.com/dwmxnz1ox/image/upload/v1779188760/oud_noir_r0urax.jpg", desc: "Manukato tajiri wa mbao na amba yenye hisia za joto." },
-  { id: 2, name: "Golden Rose EDP", category: "Manukato", price: 98000, image: "https://res.cloudinary.com/dwmxnz1ox/image/upload/v1779188781/Red_Rose_bx6w4s.jpg", desc: "Maua ya waridi yenye harufu ya rose na misk." },
-  { id: 3, name: "Zanzibar Breeze", category: "Manukato", price: 89000, image: "https://images.pexels.com/photos/4016685/pexels-photo-4016685.jpeg?auto=compress&cs=tinysrgb&w=400", desc: "Nazi, vanila na chumvi bahari - haiba ya kitropiki." },
-  { id: 4, name: "Seti ya Midomo Matte", category: "Vipodozi", price: 45000, image: "https://res.cloudinary.com/dwmxnz1ox/image/upload/v1779188740/Matte_Lipstick_Set_miomot.jpg", desc: "Seti ya rangi 5 za midomo zinazodumu kwa muda mrefu." },
-  { id: 5, name: "Vitamin C Serum", category: "Utunzaji wa Ngozi", price: 68000, image: "https://images.pexels.com/photos/4041392/pexels-photo-4041392.jpeg?auto=compress&cs=tinysrgb&w=400", desc: "Serum inayoongeza mng'aro na asidi ya hyaluronic." },
-  { id: 6, name: "Seti ya Zawadi ya Kifahari", category: "Seti za Zawadi", price: 210000, image: "https://res.cloudinary.com/dwmxnz1ox/image/upload/v1779188725/Luxury_Gift_e3qkfg.jpg", desc: "Manukato + lotion ya mwili + midomo." }
+  { id: 1, name: "30 PM Oud", category: "Manukato", price: 15000, image: "https://res.cloudinary.com/dwmxnz1ox/image/upload/v1779352241/30_pm_oud_tntsri.png", desc: "Manukato mazuri sana kwa jinsia zote, yasiyochafua nguo. Harufu ya Oud yenye kudumu kwa zaidi ya saa 12. Inafaa kwa matukio maalum na matumizi ya kila siku." },
+  { id: 2, name: "Ameerat Al Arab Set", category: "Seti za Zawadi", price: 20000, image: "https://res.cloudinary.com/dwmxnz1ox/image/upload/v1779352243/ameerat_al_arab_hg4vmm.png", desc: "Seti ya manukato yenye asili ya kiarabu, 3 in 1. Inajumuisha Oud, Rose na Musk. Zawadi bora kwa wapendwa wako." },
+  { id: 3, name: "Romantic Paris", category: "Manukato", price: 15000, image: "https://res.cloudinary.com/dwmxnz1ox/image/upload/v1779352242/romantic_paris_etws5s.png", desc: "Manukato mazuri ya kimapenzi. Inanukia vizuri kwa mwenza wako. Mchanganyiko wa maua ya waridi na vanilla. Inakumbusha mitaa ya Paris." },
+  { id: 4, name: "Sexy Girl", category: "Manukato", price: 15000, image: "https://res.cloudinary.com/dwmxnz1ox/image/upload/v1779352247/sexy_girl_vjogwx.png", desc: "Mafuta mazuri kwa mrembo. Rangi na harufu yake ni ya kipekee. Inachanganya maua ya cherry na musk nyeupe. Inavutia na kudumu kwa muda mrefu." },
+  { id: 5, name: "Asad Set", category: "Seti za Zawadi", price: 20000, image: "https://res.cloudinary.com/dwmxnz1ox/image/upload/v1779352243/asad_d2tvcw.png", desc: "3 in 1 Seti ya Manukato yenye harufu ya kupendeza. Hudumu kwa mda mrefu kwenye nguo. Inafaa kwa zawadi au matumizi binafsi." },
+  { id: 6, name: "Dark Knight", category: "Manukato", price: 15000, image: "https://res.cloudinary.com/dwmxnz1ox/image/upload/v1779352247/dark_knight_dub2pa.png", desc: "Harufu iliyoambatana na ubaridi. Mafuta mazuri kwa safarini na hata ofisini. Manukato ya kiume yenye mguso wa oud na mbao." },
+  { id: 7, name: "Khail Malhi/Al Maknoon", category: "Manukato", price: 30000, image: "https://res.cloudinary.com/dwmxnz1ox/image/upload/v1779352250/khail_malhi_tubeu8.png", desc: "Manukato mawili yenye harufu tofauti. Moja kwa 15,000 tzs. Chaguo bora kwa wale wanaopenda aina mbalimbali za manukato." },
+  { id: 8, name: "Ijal Aura Set", category: "Seti za Zawadi", price: 20000, image: "https://res.cloudinary.com/dwmxnz1ox/image/upload/v1779352251/ijal_aura_sjipma.png", desc: "Seti ya manukato yenye harufu ya kupendeza, 3 in 1. Inajumuisha aina tatu tofauti za manukato kwa bei moja." },
+  { id: 9, name: "Weekend/Lovely Seetheart", category: "Manukato", price: 30000, image: "https://res.cloudinary.com/dwmxnz1ox/image/upload/v1779352254/weekend_e0ks2r.png", desc: "Mafuta ya wapendanao yenye harufu ya kimahaba. Moja kwa 15,000 tzs. Inafaa kwa wapenzi wanaotaka kunukia pamoja." },
+  { id: 10, name: "Very Secret/Ameer al Oud", category: "Manukato", price: 30000, image: "https://res.cloudinary.com/dwmxnz1ox/image/upload/v1779352254/very_secret_nezphz.png", desc: "Manukato mawili tofauti. Moja kwa 15,000 tzs. Very Secret ni ya kimapenzi, Ameer al Oud ni ya kifahari." },
+  { id: 11, name: "Khamrah Set", category: "Seti za Zawadi", price: 20000, image: "https://res.cloudinary.com/dwmxnz1ox/image/upload/v1779352256/khamrah_z9dug2.png", desc: "Seti ya manukato yenye harufu ya kipekee ya Zanzibar. Imevutiwa na wengi. Inawakilisha urithi wa manukato wa Zanzibar." },
+  { id: 12, name: "Yara Set", category: "Seti za Zawadi", price: 20000, image: "https://res.cloudinary.com/dwmxnz1ox/image/upload/v1779352261/yara_t5dht9.png", desc: "Seti nzuri kwa zawadi. 3 in 1 kwa bei nafuu zaidi. Inajumuisha manukato ya maua na matunda." },
+  { id: 13, name: "King XVI/Oud Model Gold", category: "Manukato", price: 30000, image: "https://res.cloudinary.com/dwmxnz1ox/image/upload/v1779352260/king_xvi_ltvkqx.png", desc: "Manukato yanyonukia vizuri na masafa marefu. Moja kwa 15,000 tzs. King XVI ni ya kifahari, Oud Model Gold ni ya kipekee." },
+  { id: 14, name: "Laverne", category: "Manukato", price: 15000, image: "https://res.cloudinary.com/dwmxnz1ox/image/upload/v1779352261/laverne_ainu6z.png", desc: "Manukato yenye rangi nzuri, Harufu ya kipekee na isiyoumiza pua. Inachanganya matunda na maua kwa uwiano mzuri." },
+  { id: 15, name: "Makhsous/Marghoub", category: "Manukato", price: 30000, image: "https://res.cloudinary.com/dwmxnz1ox/image/upload/v1779352264/makhsouse_iorb9q.png", desc: "Mkhsous au Marghoub. Brown|Black|Pink. Moja kwa 15,000 tzs. Manukato maalum yenye viwango vya juu vya mafuta asilia." },
+  { id: 16, name: "Lara Breeze", category: "Manukato", price: 15000, image: "https://res.cloudinary.com/dwmxnz1ox/image/upload/v1779352265/lara_kgv0xa.png", desc: "Manukato bora kwa jinsia zote. White|Pink|Purple. Inaburudisha na kudumu kwa muda mrefu kwenye ngozi." },
+  { id: 17, name: "Oud al Sultan", category: "Seti za Zawadi", price: 20000, image: "https://res.cloudinary.com/dwmxnz1ox/image/upload/v1779352267/oud_al_sultan_xapjap.png", desc: "Seti ya Oud. Hudumu kwa mda mrefu kwenye nguo. Oud halisi ya kifahari inayowakilisha heshima na utajiri." },
+  { id: 18, name: "Qasas/Al Maknoon", category: "Manukato", price: 30000, image: "https://res.cloudinary.com/dwmxnz1ox/image/upload/v1779352267/qasas_ul4aqc.png", desc: "Manukato mawili yenye harufu tofauti. Moja kwa 15,000 tzs. Qasas inasimulia hadithi kwa harufu zake za kipekee." },
+  { id: 19, name: "Pure Pink", category: "Manukato", price: 15000, image: "https://res.cloudinary.com/dwmxnz1ox/image/upload/v1779352269/pure_pink_dy9arj.png", desc: "Harufu ya Kizanzibari. Pendwa wa vijana wote Zanzibar. Manukato safi ya maua yenye mguso wa nazi na vanila." },
+  { id: 20, name: "Marchoub/Makhsous", category: "Manukato", price: 30000, image: "https://res.cloudinary.com/dwmxnz1ox/image/upload/v1779352269/marchoub_nvx3ur.png", desc: "Manukato mawili yanayotaka kufanana. Moja kwa 15,000 tzs. Chaguo bora kwa wale wanaotaka kulinganisha harufu tofauti." }
 ];
 
 // Cart array
 let cart = [];
 
+// Global product modal reference
+let productModal;
+let currentSelectedProduct = null;
+
 // ==================== DARK/LIGHT THEME FUNCTIONALITY ====================
 function initTheme() {
-  // Get saved theme from localStorage
   const savedTheme = localStorage.getItem('hattrick_theme');
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   
-  // Set theme based on saved preference or system preference
   if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
     document.documentElement.setAttribute('data-theme', 'dark');
     updateThemeIcon('dark');
@@ -53,8 +69,6 @@ function toggleTheme() {
   document.documentElement.setAttribute('data-theme', newTheme);
   localStorage.setItem('hattrick_theme', newTheme);
   updateThemeIcon(newTheme);
-  
-  // Show toast notification
   showToast(`${newTheme === 'dark' ? '🌙 Hali ya Giza' : '☀️ Hali ya Mwangaza'} imewashwa!`);
 }
 
@@ -64,11 +78,11 @@ function renderProducts() {
   if(!container) return;
   container.innerHTML = products.map(prod => `
     <div class="col-md-4 col-lg-4">
-      <div class="product-card">
-        <img src="${prod.image}" class="product-img w-100" alt="${prod.name}">
+      <div class="product-card" data-product-id="${prod.id}">
+        <img src="${prod.image}" class="product-img w-100" alt="${prod.name}" loading="lazy">
         <div class="product-info">
           <h5 class="product-title">${prod.name}</h5>
-          <p class="small text-muted">${prod.desc}</p>
+          <p class="small text-muted">${prod.desc.substring(0, 60)}...</p>
           <div class="d-flex justify-content-between align-items-center">
             <span class="product-price">TZS ${prod.price.toLocaleString()}</span>
             <button class="add-to-cart" data-id="${prod.id}"><i class="fas fa-cart-plus"></i> Ongeza</button>
@@ -78,12 +92,103 @@ function renderProducts() {
     </div>
   `).join('');
   
+  // Add click event to product cards for preview modal
+  document.querySelectorAll('.product-card').forEach(card => {
+    card.addEventListener('click', (e) => {
+      // Don't trigger if clicking on the add-to-cart button
+      if(e.target.classList.contains('add-to-cart') || e.target.closest('.add-to-cart')) {
+        return;
+      }
+      const productId = parseInt(card.getAttribute('data-product-id'));
+      openProductModal(productId);
+    });
+  });
+  
   document.querySelectorAll('.add-to-cart').forEach(btn => {
     btn.addEventListener('click', (e) => {
+      e.stopPropagation();
       const id = parseInt(btn.getAttribute('data-id'));
       addToCart(id);
     });
   });
+}
+
+// ==================== PRODUCT PREVIEW MODAL ====================
+function openProductModal(productId) {
+  const product = products.find(p => p.id === productId);
+  if(!product) return;
+  
+  currentSelectedProduct = product;
+  
+  // Update modal content
+  document.getElementById('modalProductImg').src = product.image;
+  document.getElementById('modalProductImg').alt = product.name;
+  document.getElementById('modalProductName').textContent = product.name;
+  document.getElementById('modalProductCategory').textContent = product.category;
+  document.getElementById('modalProductPrice').textContent = `TZS ${product.price.toLocaleString()}`;
+  document.getElementById('modalProductDesc').textContent = product.desc;
+  
+  // Show modal
+  if(productModal) {
+    productModal.show();
+  }
+}
+
+// Add to cart from modal
+function setupModalButtons() {
+  const modalAddBtn = document.getElementById('modalAddToCartBtn');
+  const modalWhatsappBtn = document.getElementById('modalWhatsappBtn');
+  
+  if(modalAddBtn) {
+    modalAddBtn.addEventListener('click', () => {
+      if(currentSelectedProduct) {
+        addToCart(currentSelectedProduct.id);
+        if(productModal) productModal.hide();
+        showToast(`${currentSelectedProduct.name} imeongezwa kwenye rafu! ✨`);
+      }
+    });
+  }
+  
+  if(modalWhatsappBtn) {
+    modalWhatsappBtn.addEventListener('click', () => {
+      if(currentSelectedProduct) {
+        // Add single product to cart temporarily
+        const tempCart = [currentSelectedProduct];
+        sendSingleOrderToWhatsApp(tempCart, currentSelectedProduct);
+        if(productModal) productModal.hide();
+      }
+    });
+  }
+}
+
+// Send single product order via WhatsApp
+function sendSingleOrderToWhatsApp(cartItems, product) {
+  let orderSummary = "🛍️ *AGIZO JIPYA KUTOKA HAT-TRICK SCENTS*%0A%0A";
+  orderSummary += "📋 *MAELEZO YA AGIZO:*%0A";
+  orderSummary += "─────────────────%0A";
+  orderSummary += `1. ${product.name}%0A   💰 TZS ${product.price.toLocaleString()}%0A`;
+  orderSummary += "─────────────────%0A";
+  orderSummary += `💰 *JUMLA: TZS ${product.price.toLocaleString()}*%0A%0A`;
+  orderSummary += "👤 *MAELEZO YA MTEJA*%0A";
+  orderSummary += "─────────────────%0A";
+  orderSummary += "📝 Tafadhali toa:%0A";
+  orderSummary += "• Jina Kamili:%0A";
+  orderSummary += "• Anwani ya Uwasilishaji:%0A";
+  orderSummary += "• Njia ya Malipo Unayopendelea:%0A%0A";
+  orderSummary += "💳 *NJIA ZA MALIPO:*%0A";
+  orderSummary += "─────────────────%0A";
+  orderSummary += "📱 M-Pesa/Tigo/Airtel Money:%0A";
+  orderSummary += "   YAS: +255 677 532 140%0A";
+  orderSummary += "   (FAHIMA MOHAMED ISSA)%0A";
+  orderSummary += "🏦 Benki ya CRDB:%0A";
+  orderSummary += "   0152758498000%0A";
+  orderSummary += "   (MOHAMMED AMINU SHEHE)%0A%0A";
+  orderSummary += "🌟 *Asante kwa kuchagua Hat-Trick Scents!* 🌟";
+  
+  const phone = "255679806126";
+  const url = `https://wa.me/${phone}?text=${orderSummary}`;
+  window.open(url, '_blank');
+  showToast("Agizo la bidhaa moja limeandaliwa! WhatsApp itafunguka 📱");
 }
 
 function addToCart(productId) {
@@ -92,7 +197,6 @@ function addToCart(productId) {
     cart.push(product);
     updateCartUI();
     showToast(`${product.name} imeongezwa kwenye rafu! ✨`);
-    // Add subtle animation to cart icon
     const cartIcon = document.getElementById('cartBtn');
     if(cartIcon) {
       cartIcon.style.transform = 'scale(1.2)';
@@ -141,7 +245,6 @@ function updateCartUI() {
 }
 
 function showToast(msg) {
-  // Remove existing toast if any
   const existingToast = document.querySelector('.toast-message');
   if(existingToast) existingToast.remove();
   
@@ -159,7 +262,7 @@ function sendOrderToCEO() {
     return false;
   }
   
-  let orderSummary = "🛍️ *AGIZA JIPYA KUTOKA HAT-TRICK SCENTS*%0A%0A";
+  let orderSummary = "🛍️ *AGIZO JIPYA KUTOKA HAT-TRICK SCENTS*%0A%0A";
   orderSummary += "📋 *MAELEZO YA AGIZO:*%0A";
   orderSummary += "─────────────────%0A";
   cart.forEach((item, index) => {
@@ -168,7 +271,7 @@ function sendOrderToCEO() {
   orderSummary += "─────────────────%0A";
   const total = cart.reduce((sum,i)=> sum + i.price,0);
   orderSummary += `💰 *JUMLA: TZS ${total.toLocaleString()}*%0A%0A`;
-  orderSummary += "👤 *MAELEZO YA MTEGEMA HUDUMA*%0A";
+  orderSummary += "👤 *MAELEZO YA MTEJA*%0A";
   orderSummary += "─────────────────%0A";
   orderSummary += "📝 Tafadhali toa:%0A";
   orderSummary += "• Jina Kamili:%0A";
@@ -181,19 +284,18 @@ function sendOrderToCEO() {
   orderSummary += "   (FAHIMA MOHAMED ISSA)%0A";
   orderSummary += "🏦 Benki ya CRDB:%0A";
   orderSummary += "   0152758498000%0A";
-  orderSummary += "   (MOHAMMED AMINU SHEHE)%0A%0A";
+  orderSummary += "   (MOHAMMED AMINU SHEHE)%0A%";
+  orderSummary += "💵 Cash on Delivery (COD):%0A%0A";
   orderSummary += "🌟 *Asante kwa kuchagua Hat-Trick Scents!* 🌟";
   
-  const phone = "255679806126"; // CEO Omar Khalid Said
+  const phone = "255679806126";
   const url = `https://wa.me/${phone}?text=${orderSummary}`;
   window.open(url, '_blank');
   
-  // Show success message and clear cart
   showToast("Agizo limeandaliwa! WhatsApp itafunguka 📱");
   cart = [];
   updateCartUI();
   
-  // Close modal if open
   const modalEl = document.getElementById('cartModal');
   const modal = bootstrap.Modal.getInstance(modalEl);
   if(modal) modal.hide();
@@ -272,12 +374,12 @@ function botReply(userMessage) {
     return "💸 <strong>Njia za Malipo:</strong><br>📱 M-Pesa/Tigo/Airtel: YAS +255 677 532 140 (FAHIMA MOHAMED ISSA)<br>🏦 CRDB Bank: 0152758498000 (MOHAMMED AMINU SHEHE)<br>💵 Malipo kwa mkono yanakubalika Zanzibar na Dar es Salaam!";
   } 
   else if(lowerMsg.includes('whatsapp') || lowerMsg.includes('wasiliana') || lowerMsg.includes('simu') || lowerMsg.includes('piga') || lowerMsg.includes('namba')) {
-    return "📱 <strong>Wasiliana Nasi:</strong><br>👔 Mkurugenzi Omar: +255 679 806 126<br>👤 Msaidizi wa Mkurugenzi: +255 776 626 229<br>🛍️ Meneja Mtandaoni: +255 677 532 140<br>📧 Barua Pepe: hello@hattrickscents.co.tz";
+    return "📱 <strong>Wasiliana Nasi:</strong><br>👔 Mkurugenzi Omar: +255 679 806 126<br>👤 Msaidizi wa Mkurugenzi: +255 776 626 229<br>🛍️ Meneja Mtandaoni: +255 677 532 140<br>📧 Barua Pepe: molittle1011@gmail.com";
   } 
   else if(lowerMsg.includes('usafirishaji') || lowerMsg.includes('wasilisha') || lowerMsg.includes('delivery')) {
     return "🚚 <strong>Taarifa za Usafirishaji:</strong><br>• Tanzania (Dar, Arusha, Mwanza, Zanzibar): siku 1-3 za kazi<br>• Usafirishaji bila malipo kwa maagizo zaidi ya TZS 150,000<br>• Tunatoa namba ya kufuatilia usafirishaji kwa shehena zote";
   } 
-  else if(lowerMsg.includes('Manukato') || lowerMsg.includes('harufu') || lowerMsg.includes('perfume')) {
+  else if(lowerMsg.includes('manukato') || lowerMsg.includes('harufu') || lowerMsg.includes('perfume')) {
     return "✨ Mkusanyiko wetu wa Manukato unajumuisha:<br>• Oud Noir (Mbao tajiri na amba)<br>• Golden Rose (Maua ya waridi na misk)<br>• Zanzibar Breeze (Nazi na vanila)<br>Angalia sehemu ya Duka kwa bidhaa zinazouzwa sana! 🛍️";
   } 
   else if(lowerMsg.includes('vipodozi') || lowerMsg.includes('urembo') || lowerMsg.includes('midomo') || lowerMsg.includes('makeup')) {
@@ -321,7 +423,6 @@ chatbotIcon?.addEventListener('click', () => {
     chatbotWindow.style.display = 'none';
   } else {
     chatbotWindow.style.display = 'flex';
-    // Add welcome message if chat is empty
     if (chatMessages.children.length === 0) {
       addBotMessage("🌸 Karibu tena! Niulize chochote kuhusu bidhaa zetu, eneo la duka, au usafirishaji! ✨");
     }
@@ -383,6 +484,13 @@ document.addEventListener('DOMContentLoaded', () => {
   renderProducts();
   updateCartUI();
   initTheme();
+  
+  // Initialize product modal
+  const modalElement = document.getElementById('productModal');
+  if(modalElement) {
+    productModal = new bootstrap.Modal(modalElement);
+    setupModalButtons();
+  }
   
   // Add theme toggle button to DOM if not exists
   if (!document.getElementById('themeToggleBtn')) {
