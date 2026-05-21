@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+Disallow: /css/
+Disallow: /js/
+Sitemap: https://hattrickscents.online/sitemap.xml
+
+# Google specific instructions
+User-agent: Googlebot
+Allow: /
+Allow: /*.html$
+Crawl-delay: 1
+
+# Bing specific instructions
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
