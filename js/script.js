@@ -182,7 +182,10 @@ function sendSingleOrderToWhatsApp(cartItems, product) {
   orderSummary += "   (FAHIMA MOHAMED ISSA)%0A";
   orderSummary += "🏦 Benki ya CRDB:%0A";
   orderSummary += "   0152758498000%0A";
-  orderSummary += "   (MOHAMMED AMINU SHEHE)%0A%0A";
+  orderSummary += "   (MOHAMMED AMINU SHEHE)%0A";
+  orderSummary += "🏦 Benki ya NMB:%0A";
+  orderSummary += "   80110044403%0A";
+  orderSummary += "   (ADIL MOHAMMED SAID)%0A%0A";
   orderSummary += "🌟 *Asante kwa kuchagua Hat-Trick Scents!* 🌟";
   
   const phone = "255679806126";
