@@ -56,6 +56,57 @@ h1, h2, h3, h4, h5, .navbar-brand {
   font-weight: 600;
 }
 
+/* ==================== LOGO STYLES ==================== */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--gold) !important;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.navbar-logo {
+  height: 55px;
+  width: auto;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.navbar-logo:hover {
+  transform: scale(1.05);
+}
+
+.brand-text {
+  background: linear-gradient(135deg, var(--gold) 0%, #ffd700 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.footer-logo {
+  height: 45px;
+  width: auto;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.footer-brand h5 {
+  margin: 0;
+  color: var(--gold);
+  font-size: 1.3rem;
+}
+
 /* Theme Toggle Button */
 .theme-toggle {
   position: fixed;
@@ -90,13 +141,6 @@ h1, h2, h3, h4, h5, .navbar-brand {
 
 [data-theme="dark"] .navbar {
   background: rgba(10,10,30,0.95);
-}
-
-.navbar-brand {
-  color: var(--gold) !important;
-  font-size: 1.8rem;
-  letter-spacing: 1px;
-  font-weight: 700;
 }
 
 .navbar .nav-link {
@@ -570,4 +614,16 @@ h1, h2, h3, h4, h5, .navbar-brand {
   }
   .product-modal-img { max-height: 250px; }
   .modal-dialog { margin: 0.5rem; }
+  
+  .navbar-logo {
+    height: 40px;
+  }
+  
+  .brand-text {
+    font-size: 1.2rem;
+  }
+  
+  .navbar-brand {
+    gap: 8px;
+  }
 }
