@@ -181,7 +181,7 @@ function sendSingleOrderToWhatsApp(cartItems, product) {
   orderSummary += "📱 YAS: 0679806126%0A";
   orderSummary += "   (FATMA AMOUR)%0A";
   orderSummary += "🏦 PBZ: 0825683001%0A";
-  orderSummary += "   (OMAR KHALID OMAR)%0A%0A";
+  orderSummary += "   (FATMA AMOUR)%0A%0A";
   orderSummary += "🌟 *Asante kwa kuchagua Hat-Trick Scents!* 🌟";
   
   const phone = "255679806126";
@@ -281,7 +281,7 @@ function sendOrderToCEO() {
   orderSummary += "📱 YAS: 0679806126%0A";
   orderSummary += "   (FATMA AMOUR)%0A";
   orderSummary += "🏦 PBZ: 0825683001%0A";
-  orderSummary += "   (OMAR KHALID OMAR)%0A%0A";
+  orderSummary += "   (FATMA AMOUR)%0A%0A";
   orderSummary += "🌟 *Asante kwa kuchagua Hat-Trick Scents!* 🌟";
   
   const phone = "255679806126";
@@ -367,7 +367,7 @@ function botReply(userMessage) {
     return "📍 Duka letu lipo <strong>Darajani, Zanzibar</strong>. Tupate kwa majaribio ya kipekee na ushauri wa kibinafsi! 🏪";
   } 
   else if(lowerMsg.includes('malipo') || lowerMsg.includes('kulipa') || lowerMsg.includes('mpesa') || lowerMsg.includes('tigo') || lowerMsg.includes('airtel')) {
-    return "💸 <strong>Njia za Malipo:</strong><br>📱 YAS: 0679806126 (FATMA AMOUR)<br>🏦 PBZ: 0825683001 (OMAR KHALID OMAR)<br>💵 Malipo kwa mkono yanakubalika Zanzibar na Dar es Salaam!";
+    return "💸 <strong>Njia za Malipo:</strong><br>📱 YAS: 0679806126 (FATMA AMOUR)<br>🏦 PBZ: 0825683001 (FATMA AMOUR)<br>💵 Malipo kwa mkono yanakubalika Zanzibar na Dar es Salaam!";
   } 
   else if(lowerMsg.includes('whatsapp') || lowerMsg.includes('wasiliana') || lowerMsg.includes('simu') || lowerMsg.includes('piga') || lowerMsg.includes('namba')) {
     return "📱 <strong>Wasiliana Nasi:</strong><br>👔 Mkurugenzi Omar: +255 679 806 126<br>👤 Msaidizi wa Mkurugenzi: +255 776 626 229<br>🛍️ Meneja Mtandaoni: +255 677 532 140<br>📧 Barua Pepe: molittle1011@gmail.com";
